@@ -3,7 +3,6 @@ const fs = require('fs');
 const path = require('path');
 const todo = require('./todo');
 
-
 const hostname = '127.0.0.1';
 const port = 3000;
 

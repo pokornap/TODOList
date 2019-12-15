@@ -1,16 +1,23 @@
-exports.todo = function readToDo() {
+const fs = require('fs');
+const filePath = "./todoList.txt";
+
+
+exports.readToDo = function () {
     console.log("Reading ToDo List");
-}
+    return fs.readFile(filePath, function(error, content) {
+        console.log(content);
+    });
+};
 
-exports.todo = function addToDo() {
+exports.addToDo = function () {
     console.log("adding ToDo List");
-}
+};
 
-exports.todo = function completeToDO() {
+exports.completeToDo = function () {
     console.log("completing ToDo List");
-}
+};
 
-exports.todo = function deleteToDo() {
+exports.deleteToDo = function () {
     console.log("deleting ToDo List");
-}
+};
 
