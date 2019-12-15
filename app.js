@@ -1,14 +1,11 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const todo = require('./todo');
+
 
 const hostname = '127.0.0.1';
 const port = 3000;
-
-
-
-
-
 
 
 const server = http.createServer(function (request, response) {
@@ -50,5 +47,9 @@ const server = http.createServer(function (request, response) {
 });
 
 server.listen(port, hostname, () => {
+  todo.readToDo();
+  todo.completeToDo();
+  todo.addToDo();
+  todo.deleteToDo();
   console.log(`Server running at http://${hostname}:${port}/`);
 });
