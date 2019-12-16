@@ -7,7 +7,7 @@ var app = new Vue({
     },
     mounted () {
         axios
-          .get('localhost:3000/todoList.txt')
+          .post('https://api.coindesk.com/v1/bpi/currentprice.json')
           .then(response => (this.tasks = response))
       }
 })
