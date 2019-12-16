@@ -4,13 +4,17 @@ const filePath = "./todoList.txt";
 
 exports.readToDo = function () {
     console.log("Reading ToDo List");
-    return fs.readFile(filePath, function(error, content) {
+    fs.readFile(filePath, "utf8", function(error, content) {
         console.log(content);
     });
 };
 
-exports.addToDo = function () {
+
+exports.addToDo = function (task) {
     console.log("adding ToDo List");
+    if (typeof task === "string") {
+        fs.appendFile(filePath, task)
+    }
 };
 
 exports.completeToDo = function () {
