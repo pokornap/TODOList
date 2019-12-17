@@ -2,10 +2,14 @@ const fs = require('fs');
 const filePath = "./todoList.txt";
 
 
-exports.readToDo = function () {
+exports.readToDo = function (response, conentType) {
     console.log("Reading ToDo List");
     fs.readFile(filePath, "utf8", function(error, content) {
-        console.log(content);
+        var obj = JSON.parse(content);
+        if (!((response == null) || (contentType == null))) {
+            response.writeHead(200, { 'Content-Type': contentType});
+            response.end(content, 'utf-8');
+        }
     });
 };
 

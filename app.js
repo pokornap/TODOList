@@ -15,6 +15,7 @@ const server = http.createServer(function (request, response) {
 
   var extName = path.extname(filePath);
   var contentType = 'text/html';
+  
   switch (extName) {
       case '.js':
           contentType = 'text/javascript';
@@ -23,7 +24,6 @@ const server = http.createServer(function (request, response) {
           contentType = 'text/css';
           break;
   }
-
   fs.exists(filePath, function(exists) {
 
     if (exists) {
@@ -39,8 +39,14 @@ const server = http.createServer(function (request, response) {
         });
     }
     else {
+      if (extName == '.json'){
+        contentType = "application/json";
+        todo.readToDo(response, contentType);
+
+      } else {
         response.writeHead(404);
         response.end();
+      }
     }
   });
 });
