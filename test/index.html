@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Canvas</title>
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+p {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+#main1 {
+    height: 50%;
+    width: 100%;
+    background-color: black;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#left {
+    position: relative;
+}
+
+#right {
+    position: relative;
+}
+
+.column {
+    float: left;
+    border: 3px solid rgb(255, 8, 0);
+    background-color: gray;
+    height: 100%;
+    width: 50%;
+    border-radius: 25px;
+    padding: 50px;
+}
+
+.button {
+    position: relative;
+    background-color: maroon;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button:hover {
+    border: 2px solid black;
+}
+
+</style>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+
+<div id="main1" class="clearfix">
+    <p id="p1">Canvas</p>
+    <div id="left" class="column">
+        <p>Left</p>
+        <button id="display" class="button">Display</button>
+    </div>
+    <div id="right" class="column">
+        <p>Right</p>
+        <div id="tester" style="width:600px;height:250px;"></div>
+        <script>	
+            TESTER = document.getElementById('tester');
+            Plotly.plot( TESTER, [{
+            x: [1, 2, 3, 4, 5],
+            y: [1, 2, 4, 8, 16] }], {
+            margin: { t: 0 } } ); </script>
+    </div>
+
+</div>
+</body>
+</html>
