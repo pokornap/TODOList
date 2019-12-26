@@ -1,5 +1,47 @@
 <!DOCTYPE html>
 <html>
+<style>
+
+* {
+    background-color: grey;
+    border-color: red;
+    border-width: 5px;
+    border-style: solid;
+}
+
+body {
+    border-color: green;
+}
+
+div {
+    font-family: "lucidia console", courier, monospace;
+    color: rgb(24, 24, 24);
+    font-weight: bold;
+    /* margin-bottom: 15px;
+    margin-left: 5px;
+    padding-left: 10px;
+    padding-top: 0px; */
+}
+
+.topbar {
+    background-color: rgba(1, 1, 117, 0.589);
+    top: 25px;
+    left: 0px;
+    font-size: 2.5em;
+}
+
+.display {
+    background-color: rgb(196, 196, 196);
+    /* height: 100%; */
+    font-size: 16px;
+}
+
+.item {
+    background-color: rgb(0,0,0,0);
+}
+
+
+</style>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale" charset="UTF-8">
         <title>Hello there!</title>
@@ -7,10 +49,12 @@
     </head>
     <body>
 
-        <div>
-
-            <p id="list">This is my Can-Do List!</p>
-
+        <div class="topbar">This is my Can-Do List!</div>
+        <div class="display">
+            <p class="item">This is my list of things!</p>
+            <!-- <p class="item">This is my list of things!</p>
+            <p class="item">This is my list of things!</p>
+            <p class="item">This is my list of things!</p> -->
         </div>
         <script>
         
