@@ -11,7 +11,7 @@ const server = http.createServer(function (request, response) {
 
   var filePath = '.' + request.url;
   if (filePath == './')
-    filePath = './index.html';
+    filePath = './Todo_List/index.html';
 
   var extName = path.extname(filePath);
   var contentType = 'text/html';
@@ -52,9 +52,9 @@ const server = http.createServer(function (request, response) {
 });
 
 server.listen(port, hostname, () => {
-  todo.readToDo();
-  todo.completeToDo();
-  todo.addToDo();
-  todo.deleteToDo();
+  // todo.readToDo();
+  // todo.completeToDo();
+  // todo.addToDo();
+  // todo.deleteToDo();
   console.log(`Server running at http://${hostname}:${port}/`);
 });
